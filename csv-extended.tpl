@@ -9,7 +9,7 @@ cols = [
   {"title": "Epoch",      "id": "epoch",      "visible": True, "field": lambda h: host['ansible_facts'].get('ansible_date_time', {}).get('epoch', '')},
   {"title": "Name",       "id": "name",       "visible": True, "field": lambda h: h.get('name', '')},
   {"title": "OS",         "id": "os",         "visible": True, "field": lambda h: h['ansible_facts'].get('ansible_distribution', '') + ' ' + h['ansible_facts'].get('ansible_distribution_version', '')},
-  {"title": "Supplier",   "id": "supplier",   "visible": True, "field": lambda h: host['ansible_facts'].get('ansible_system_vendor', '')},
+  {"title": "Vendor",     "id": "vendor",     "visible": True, "field": lambda h: host['ansible_facts'].get('ansible_system_vendor', '')},
   {"title": "IP",         "id": "ip",         "visible": True, "field": lambda h: host['ansible_facts'].get('ansible_default_ipv4', {}).get('address', '')},
   {"title": "Arch",       "id": "arch",       "visible": True, "field": lambda h: host['ansible_facts'].get('ansible_architecture', 'Unk') + '/' + host['ansible_facts'].get('ansible_userspace_architecture', 'Unk')},
   {"title": "Mem",        "id": "mem",        "visible": True, "field": lambda h: '%0.0fg' % (int(host['ansible_facts'].get('ansible_memtotal_mb', 0)) / 1000.0)},
